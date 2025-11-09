@@ -1,4 +1,4 @@
-## [CONFIGURAR RED ESTÁTICA](README.md)
+## [Configuración de Red Estática](README.md)
 
 En las 4 máquinas virtuales, configuramos las IPs estáticas editando el archivo de configuración de red.
 
