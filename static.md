@@ -3,16 +3,17 @@
 En las 4 máquinas virtuales, configuramos las IPs estáticas editando el archivo de configuración de red.
 
 Comando en todas las MVs:
--   ****sudo nano /etc/network/interfaces****
+- **sudo nano /etc/network/interfaces**
+
+---
 
 ### Servidor ISC DHCP (MV 1)
 
 IPs a configurar:
+- Adaptador Puente: **192.168.1.50**
+- Red **dhcp**: **192.168.2.1**
 
--   Adaptador Puente: **192.168.1.50**
--   Red **dhcp**: **192.168.2.1**
-
-**Archivo → ****/etc/network/interfaces****
+Archivo → **/etc/network/interfaces**
 
 ****auto ******enp0s3****
 
