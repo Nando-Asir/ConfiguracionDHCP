@@ -146,3 +146,7 @@ Hacer un **journal -u isc-dhcp-server.service** para comprobar que todo funciona
 > [!NOTE]
 > Añadir → **ip route add 192.168.10.0/24 via 192.168.2.10** → Permitimos
 que de la IP al cliente.
+
+---
+
+### [Configuración Red <- Anterior](static.md) | [Siguiente -> Agente Relay](relay.md)
