@@ -38,7 +38,7 @@ El Servidor Relay (MV 3) necesita actuar como un router básico para reenviar lo
 \
 Comando en MV 3:
 ```bash
-nano /etc/sysctl.conf**
+nano /etc/sysctl.conf
 ```
 
 Descomenta o añade la siguiente línea:
