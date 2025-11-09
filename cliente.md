@@ -1,4 +1,4 @@
-## Cliente DHCP (MV 4)
+## [Cliente DHCP (MV 4)](README.md)
 
 ### Obtener IP por DHCP
 
@@ -25,3 +25,7 @@ En el **Servidor ISC DHCP (MV 1)**, revisa el log para ver que la petición lleg
 ```bash
 journalctl -u isc-dhcp-server
 ```
+
+---
+
+### [Agente Relay <- Anterior](relay.md)
