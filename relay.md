@@ -24,11 +24,11 @@ nano /etc/default/isc-dhcp-relay
 \
 **Dirección IP del servidor **o servidores** DHCP**\
 **Apunta a ambos servidores DHCP (MV 1 y MV 2) en la red 192.168.2.0/24**
-- `SERVERS= "192.168.2.1 192.168.2.2"`
+- `SERVERS="192.168.2.1 192.168.2.2"`
 
 **Interfaces por donde el relay escucha a los clientes**\
 **Debe ser la interfaz de la red interna \'relay\' (192.168.10.0/24)**
-- `INTERFACES= "enp0s3 enp0s8"`
+- `INTERFACES="enp0s3 enp0s8"`
 
 ---
 
