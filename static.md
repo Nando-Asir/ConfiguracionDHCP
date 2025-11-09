@@ -15,16 +15,16 @@ IPs a configurar:
 
 Archivo → **/etc/network/interfaces**
 
-auto **enp0s3**
-iface **enp0s3** inet static
- address 192.168.1.50
- netmask 255.255.255.0
- gateway 192.168.1.1
+auto **enp0s3**\
+iface **enp0s3** inet static\
+ address 192.168.1.50\
+ netmask 255.255.255.0\
+ gateway 192.168.1.1\
 
-auto **enp0s8**
-iface **enp0s8** inet static
- address 192.168.2.1
- netmask 255.255.255.0
+auto **enp0s8**\
+iface **enp0s8** inet static\
+ address 192.168.2.1\
+ netmask 255.255.255.0\
 
 ---
 
