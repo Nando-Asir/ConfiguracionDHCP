@@ -28,4 +28,10 @@ journalctl -u isc-dhcp-server
 
 ---
 
+> [!WARNING]
+> Si no nos da una IP, configura una red estática dentro del rango que debería e intenta hacer ping a la puerta de enlace del Agente de Relay.
+> Si hace ping, el problema está en que el Servidor DHCP no está reenviando los paquetes, es posible que no se haya guardo el ip route.
+
+---
+
 ### [Agente Relay <- Anterior](relay.md)
