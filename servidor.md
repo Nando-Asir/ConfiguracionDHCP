@@ -87,6 +87,7 @@ Comando en MV 2:
 -   ****sudo nano /etc/dhcp/dhcpd.conf****
 
 **Contenido para /etc/dhcp/dhcpd.conf (MV 2 - Servidor Secundario):**\
+\
 **Descomenta esta línea para que el servidor sea la autoridad en su red**
 ```bash
 authoritative;
