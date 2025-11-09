@@ -32,7 +32,9 @@ Contenido para **/etc/dhcp/dhcpd.conf** (MV 1 - Servidor Principal):
 
 **Descomenta esta línea para que el servidor sea la autoridad en su
 red**
-- **authoritative;**
+```bash
+- authoritative;
+```
 
 **Opciones globales**
 ```bash
