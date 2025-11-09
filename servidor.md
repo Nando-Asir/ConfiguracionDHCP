@@ -14,10 +14,10 @@ sudo apt install isc-dhcp-server -y
 
 Indica al servicio la interfaz que debe escuchar (la de la red interna **dhcp**). Usa el nombre de la interfaz configurada para **192.168.2.x**.
 
-Comando en ambas MVs:
+Comando en **ambas** MVs:
 - `nano /etc/default/isc-dhcp-server`
 
-Busca la línea de **INTERFACESv4** y edítala (reemplazando **enp0s8**):
+Busca la línea de **INTERFACESv4** y edítala:
 - `INTERFACESv4= "enp0s8"`
 
 ---
@@ -59,7 +59,7 @@ failover peer \"dhcp-failover-group\" {
 ```
 
 **Subred para la Red Interna \'dhcp\' (192.168.2.0/24)**\
-**Esta subred solo la usamos para la comunicación interna entre servidores DHCP.**\
+**Esta subred solo la usamos para la comunicación interna entre servidores DHCP.**
 ```bash
 subnet 192.168.2.0 netmask 255.255.255.0 {
 }
@@ -67,7 +67,7 @@ subnet 192.168.2.0 netmask 255.255.255.0 {
 
 **Subred para el Cliente (a través del Relay) (192.168.10.0/24)**\
 **El Servidor DHCP (MV 1) sirve IPs en esta subred.**\
-**La IP del router/gateway debe ser la IP de la interfaz del Servidor Relay (MV 3)**\
+**La IP del router/gateway debe ser la IP de la interfaz del Servidor Relay (MV 3)**
 ```bash
 subnet 192.168.10.0 netmask 255.255.255.0 {
  pool {
@@ -140,6 +140,8 @@ Inicia el servicio en **ambos** servidores:
 - `systemctl status isc-dhcp-server
 
 Hacer un **journal -u isc-dhcp-server.service** para comprobar que todo funcional correctamente.
+
+---
 
 > [!NOTE]
 > Añadir → **ip route add 192.168.10.0/24 via 192.168.2.10** → Permitimos
