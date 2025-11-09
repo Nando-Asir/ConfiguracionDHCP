@@ -1,4 +1,4 @@
-## [CONFIGURACIÓN DHCP RELAY (MV 3)](README.md)
+## [Configuración Agente Relay (MV 3)](README.md)
 
 ---
 
