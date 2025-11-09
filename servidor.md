@@ -29,6 +29,7 @@ Comando en MV 1:
 - **nano /etc/dhcp/dhcpd.conf**
 
 Contenido para **/etc/dhcp/dhcpd.conf** (MV 1 - Servidor Principal):\
+\
 **Descomenta esta línea para que el servidor sea la autoridad en su red**
 ```bash
 authoritative;
