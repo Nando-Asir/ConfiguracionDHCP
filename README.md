@@ -1,4 +1,4 @@
-# CONFIGURACIÓN ISC DHCP + FAILOVER + RELAY
+# Configuración ISC DHCP & Failover & Relay
 
 ---
 
