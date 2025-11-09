@@ -1,12 +1,12 @@
 ## Configuración Servidor ISC DHCP Y FAILOVER (MV 1 y MV 2)
 
----
-
 ### Instalación (MV 1 y MV 2)
 
 Instala el servidor ISC DHCP en ambas máquinas:
-- **sudo apt update**
-- **sudo apt install isc-dhcp-server -y**
+```bash
+apt update
+sudo apt install isc-dhcp-server -y
+```
 
 ---
 
@@ -15,10 +15,10 @@ Instala el servidor ISC DHCP en ambas máquinas:
 Indica al servicio la interfaz que debe escuchar (la de la red interna **dhcp**). Usa el nombre de la interfaz configurada para **192.168.2.x**.
 
 Comando en ambas MVs:
-- **nano /etc/default/isc-dhcp-server**
+- `nano /etc/default/isc-dhcp-server`
 
 Busca la línea de **INTERFACESv4** y edítala (reemplazando **enp0s8**):
-- INTERFACESv4= **enp0s8**
+- `INTERFACESv4= "enp0s8"`
 
 ---
 
@@ -26,7 +26,7 @@ Busca la línea de **INTERFACESv4** y edítala (reemplazando **enp0s8**):
 
 Edita el archivo de configuración principal.\
 Comando en MV 1:
-- **nano /etc/dhcp/dhcpd.conf**
+- `nano /etc/dhcp/dhcpd.conf`
 
 Contenido para **/etc/dhcp/dhcpd.conf** (MV 1 - Servidor Principal):\
 \
@@ -83,8 +83,7 @@ subnet 192.168.10.0 netmask 255.255.255.0 {
 ### Configuración del Failover (MV 2 - Servidor Secundario)
 
 Comando en MV 2:
-
--   ****sudo nano /etc/dhcp/dhcpd.conf****
+- `sudo nano /etc/dhcp/dhcpd.conf
 
 **Contenido para /etc/dhcp/dhcpd.conf (MV 2 - Servidor Secundario):**\
 \
@@ -136,9 +135,9 @@ subnet 192.168.10.0 netmask 255.255.255.0 {
 ### Iniciar y Verificar el Servicio DHCP (MV 1 y MV 2)
 
 Inicia el servicio en **ambos** servidores:
-- **sudo systemctl start isc-dhcp-server**
-- **sudo systemctl enable isc-dhcp-server**
-- **sudo systemctl status isc-dhcp-server**
+- `systemctl start isc-dhcp-server
+- `systemctl enable isc-dhcp-server
+- `systemctl status isc-dhcp-server
 
 Hacer un **journal -u isc-dhcp-server.service** para comprobar que todo funcional correctamente.
 
