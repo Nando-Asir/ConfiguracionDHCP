@@ -1,5 +1,7 @@
 # Configuración ISC DHCP & Failover & Relay
 
+<p align="center"><img src="img/dhcp.png" alt="dhcp" width="850" height="400"></p>
+
 ---
 
 ## Índice
