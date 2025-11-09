@@ -24,7 +24,6 @@ Busca la línea de **INTERFACESv4** y edítala:
 
 ### Configuración del Failover y Subredes (MV 1 - Servidor Principal)
 
-Edita el archivo de configuración principal.\
 Comando en MV 1:
 - `nano /etc/dhcp/dhcpd.conf`
 
@@ -83,7 +82,7 @@ subnet 192.168.10.0 netmask 255.255.255.0 {
 ### Configuración del Failover (MV 2 - Servidor Secundario)
 
 Comando en MV 2:
-- `sudo nano /etc/dhcp/dhcpd.conf
+- `sudo nano /etc/dhcp/dhcpd.conf`
 
 **Contenido para /etc/dhcp/dhcpd.conf (MV 2 - Servidor Secundario):**\
 \
