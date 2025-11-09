@@ -91,3 +91,7 @@ iface enp0s3 inet dhcp
 
 Reinicia el servicio de red en las 4 MVs:
 - `systemctl restart networking`
+
+---
+
+### [Pasos Previos <- Anterior](vbox.md) | [Siguiente -> Servidor & Failover](servidor.md)
