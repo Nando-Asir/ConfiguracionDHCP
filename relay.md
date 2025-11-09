@@ -28,28 +28,26 @@ Comando en MV 3:
 **Debe ser la interfaz de la red interna \'relay\' (192.168.10.0/24)**
 - **INTERFACES=\"enp0s3 enp0s8\"**
 
-C. Habilitar el Reenvío (Forwarding)
+---
 
-El Servidor Relay (MV 3) necesita actuar como un router básico para
-reenviar los paquetes entre la red **relay** (192.168.10.0/24) y la red
-**dhcp** (192.168.2.0/24).
+### Habilitar el Reenvío (Forwarding)
 
+El Servidor Relay (MV 3) necesita actuar como un router básico para reenviar los paquetes entre la red **relay** (192.168.10.0/24) y la red **dhcp** (192.168.2.0/24).\
+\
 Comando en MV 3:
-
--   ****sudo nano /etc/sysctl.conf****
+- **sudo nano /etc/sysctl.conf**
 
 Descomenta o añade la siguiente línea:
-
--   ****net.ipv4.ip_forward=1****
+- **net.ipv4.ip_forward=1**
 
 Aplica el cambio sin reiniciar:
+- **sudo sysctl -p**
 
--   ****sudo sysctl -p****
+---
 
-D. Iniciar y Verificar el Servicio Relay (MV 3)
+### Iniciar y Verificar el Servicio Relay (MV 3)
 
 Inicia y verifica el servicio:
-
--   ****sudo systemctl start isc-dhcp-relay****
--   ****sudo systemctl enable isc-dhcp-relay****
--   ****sudo systemctl status isc-dhcp-relay****
+- **sudo systemctl start isc-dhcp-relay**
+- **sudo systemctl enable isc-dhcp-relay**
+- **sudo systemctl status isc-dhcp-relay**
