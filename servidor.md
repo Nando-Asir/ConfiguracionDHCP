@@ -5,8 +5,8 @@
 ### Instalación (MV 1 y MV 2)
 
 Instala el servidor ISC DHCP en ambas máquinas:
--   **sudo apt update**
--   **sudo apt install isc-dhcp-server -y**
+- **sudo apt update**
+- **sudo apt install isc-dhcp-server -y**
 
 ---
 
@@ -18,7 +18,7 @@ Comando en ambas MVs:
 -   **nano /etc/default/isc-dhcp-server**
 
 Busca la línea de **INTERFACESv4** y edítala (reemplazando **enp0s8**):
--   INTERFACESv4= **enp0s8***
+-   INTERFACESv4= **enp0s8**
 
 ---
 
@@ -32,29 +32,26 @@ Contenido para **/etc/dhcp/dhcpd.conf** (MV 1 - Servidor Principal):
 
 **Descomenta esta línea para que el servidor sea la autoridad en su
 red**
-
--   ****authoritative;****
+- **authoritative;**
 
 **Opciones globales**
-
--   ****option domain-name \"red.local\";****
--   ****option domain-name-servers 8.8.8.8, 8.8.4.4;****
--   ****default-lease-time 600;****
--   ****max-lease-time 7200;****
+- **option domain-name \"red.local\";**
+- **option domain-name-servers 8.8.8.8, 8.8.4.4;**
+- **default-lease-time 600;**
+- **max-lease-time 7200;**
 
 **Declaración de la relación de Failover**
-
--   ****failover peer \"dhcp-failover-group\" {****
--   **** primary;****
--   **** address 192.168.2.1; → IP propia (MV 1)****
--   **** port 647;****
--   **** peer address 192.168.2.2; → IP del compañero (MV 2)****
--   **** peer port 647;****
--   **** max-response-delay 60;****
--   **** max-unacked-updates 10;****
--   **** mclt 1800;****
--   **** split 128;****
--   ****}****
+- **failover peer \"dhcp-failover-group\" {**
+- ** primary;**
+- ** address 192.168.2.1; → IP propia (MV 1)**
+- ** port 647;****
+- ** peer address 192.168.2.2; → IP del compañero (MV 2)**
+- ** peer port 647;**
+- ** max-response-delay 60;**
+- ** max-unacked-updates 10;**
+- ** mclt 1800;**
+- ** split 128;**
+- **}**
 
 **Subred para la Red Interna \'dhcp\' (192.168.2.0/24)**
 
