@@ -24,14 +24,12 @@ Busca la línea de **INTERFACESv4** y edítala (reemplazando **enp0s8**):
 
 ### Configuración del Failover y Subredes (MV 1 - Servidor Principal)
 
-Edita el archivo de configuración principal.
+Edita el archivo de configuración principal.\
 Comando en MV 1:
 - **nano /etc/dhcp/dhcpd.conf**
 
-Contenido para **/etc/dhcp/dhcpd.conf** (MV 1 - Servidor Principal):
-
-**Descomenta esta línea para que el servidor sea la autoridad en su
-red**
+Contenido para **/etc/dhcp/dhcpd.conf** (MV 1 - Servidor Principal):\
+**Descomenta esta línea para que el servidor sea la autoridad en su red**
 ```bash
 authoritative;
 ```
@@ -59,20 +57,17 @@ failover peer \"dhcp-failover-group\" {
 }
 ```
 
-**Subred para la Red Interna \'dhcp\' (192.168.2.0/24)**
-
-**Esta subred solo la usamos para la comunicación interna entre
-servidores DHCP.**
+**Subred para la Red Interna \'dhcp\' (192.168.2.0/24)**\
+**Esta subred solo la usamos para la comunicación interna entre servidores DHCP.**\
 ```bash
 subnet 192.168.2.0 netmask 255.255.255.0 {
 }
 ```
 
-**Subred para el Cliente (a través del Relay) (192.168.10.0/24)**
-**El Servidor DHCP (MV 1) sirve IPs en esta subred.**
-**La IP del router/gateway debe ser la IP de la interfaz del Servidor
-Relay (MV 3)**
-
+**Subred para el Cliente (a través del Relay) (192.168.10.0/24)**\
+**El Servidor DHCP (MV 1) sirve IPs en esta subred.**\
+**La IP del router/gateway debe ser la IP de la interfaz del Servidor Relay (MV 3)**\
+```bash
 subnet 192.168.10.0 netmask 255.255.255.0 {
  pool {
  failover peer \"dhcp-failover-group\";
@@ -80,8 +75,9 @@ subnet 192.168.10.0 netmask 255.255.255.0 {
  option routers 192.168.10.1; → IP del Servidor Relay (MV 3)
  }
 }
+```
 
-D. Configuración del Failover (MV 2 - Servidor Secundario)
+### Configuración del Failover (MV 2 - Servidor Secundario)
 
 Comando en MV 2:
 
