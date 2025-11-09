@@ -77,6 +77,8 @@ subnet 192.168.10.0 netmask 255.255.255.0 {
 }
 ```
 
+---
+
 ### Configuración del Failover (MV 2 - Servidor Secundario)
 
 Comando en MV 2:
@@ -126,6 +128,8 @@ subnet 192.168.10.0 netmask 255.255.255.0 {
  }
 }
 ```
+
+---
 
 ### Iniciar y Verificar el Servicio DHCP (MV 1 y MV 2)
 
