@@ -83,65 +83,59 @@ Comando en MV 2:
 
 -   ****sudo nano /etc/dhcp/dhcpd.conf****
 
-**Contenido para ******/etc/dhcp/dhcpd.conf****** (MV 2 - Servidor
-Secundario):**
-
-**Descomenta esta línea para que el servidor sea la autoridad en su
-red**
-
--   ****authoritative;****
-
-**
-
-**
-
-**
+**Contenido para /etc/dhcp/dhcpd.conf (MV 2 - Servidor Secundario):**\
+**Descomenta esta línea para que el servidor sea la autoridad en su red**
+```bash
+authoritative;
+```
 
 **Opciones globales**
-
--   ****option domain-name \"red.local\";****
--   ****option domain-name-servers 8.8.8.8, 8.8.4.4;****
--   ****default-lease-time 600;****
--   ****max-lease-time 7200;****
+```bash
+option domain-name \"red.local\";
+option domain-name-servers 8.8.8.8, 8.8.4.4;
+default-lease-time 600;
+max-lease-time 7200;
+```
 
 **Declaración de la relación de Failover (secundaria)**
-
--   ****failover peer \"dhcp-failover-group\" {****
--   **** secondary;****
--   **** address 192.168.2.2; → IP propia (MV 2)****
--   **** port 647;****
--   **** peer address 192.168.2.1; → IP del compañero (MV 1)****
--   **** peer port 647;****
--   **** max-response-delay 60;****
--   **** max-unacked-updates 10;****
--   ****}****
+```bash
+failover peer \"dhcp-failover-group\" {
+ secondary;
+ address 192.168.2.2; → IP propia (MV 2)
+ port 647;
+ peer address 192.168.2.1; → IP del compañero (MV 1)
+ peer port 647;
+ max-response-delay 60;
+ max-unacked-updates 10;
+}
+```
 
 **Subred para la Red Interna \'dhcp\' (192.168.2.0/24)**
-
--   ****subnet 192.168.2.0 netmask 255.255.255.0 {****
--   **}**
+```bash
+subnet 192.168.2.0 netmask 255.255.255.0 {
+}
+```
 
 **Subred para el Cliente (a través del Relay) (192.168.10.0/24)**
+```bash
+subnet 192.168.10.0 netmask 255.255.255.0 {
+ pool {
+ failover peer \"dhcp-failover-group\";
+ range 192.168.10.100 192.168.10.200;
+ option routers 192.168.10.1; → IP del Servidor Relay (MV 3)
+ }
+}
+```
 
--   ****subnet 192.168.10.0 netmask 255.255.255.0 {****
--   **** pool {****
--   **** failover peer \"dhcp-failover-group\";****
--   **** range 192.168.10.100 192.168.10.200;****
--   **** option routers 192.168.10.1;**** → IP del Servidor Relay (MV
-    3)**
--   **** }****
--   ****}****
-
-E. Iniciar y Verificar el Servicio DHCP (MV 1 y MV 2)
+### Iniciar y Verificar el Servicio DHCP (MV 1 y MV 2)
 
 Inicia el servicio en **ambos** servidores:
+- **sudo systemctl start isc-dhcp-server**
+- **sudo systemctl enable isc-dhcp-server**
+- **sudo systemctl status isc-dhcp-server**
 
--   ****sudo systemctl start isc-dhcp-server****
--   ****sudo systemctl enable isc-dhcp-server****
--   ****sudo systemctl status isc-dhcp-server****
+Hacer un **journal -u isc-dhcp-server.service** para comprobar que todo funcional correctamente.
 
-Hacer un **journal -u isc-dhcp-server.service** para comprobar que todo
-funcional correctamente.
-
-Añadir → **ip route add 192.168.10.0/24 via 192.168.2.10** → Permitimos
+> [!NOTE]
+> Añadir → **ip route add 192.168.10.0/24 via 192.168.2.10** → Permitimos
 que de la IP al cliente.
