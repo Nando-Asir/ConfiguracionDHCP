@@ -1,4 +1,4 @@
-## Configuración Servidor ISC DHCP Y FAILOVER (MV 1 y MV 2)
+## Configuración Servidor DHCP Y Failover (MV 1 y MV 2)
 
 ### Instalación (MV 1 y MV 2)
 
