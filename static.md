@@ -3,7 +3,7 @@
 En las 4 máquinas virtuales, configuramos las IPs estáticas editando el archivo de configuración de red.
 
 Comando en todas las MVs:
-- **sudo nano /etc/network/interfaces**
+- `nano /etc/network/interfaces`
 
 ---
 
@@ -78,7 +78,7 @@ iface enp0s8 inet static
 ### `Cliente (MV 4)`
 
 El cliente tomará IP por DHCP.
-Archivo → */etc/network/interfaces**
+Archivo → **/etc/network/interfaces**
 
 ```bash
 auto enp0s3
@@ -90,4 +90,4 @@ iface enp0s3 inet dhcp
 ### Aplicar Configuración de Red (Todas las MVs)
 
 Reinicia el servicio de red en las 4 MVs:
-- **sudo systemctl restart networking**
+- `systemctl restart networking`
