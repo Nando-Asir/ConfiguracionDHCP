@@ -7,7 +7,7 @@ Comando en todas las MVs:
 
 ---
 
-### Servidor ISC DHCP (MV 1)
+### `Servidor ISC DHCP (MV 1)`
 
 IPs a configurar:
 - Adaptador Puente: **192.168.1.50**
