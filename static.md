@@ -28,7 +28,7 @@ iface **enp0s8** inet static
 
 ---
 
-### Servidor Failover (MV 2)
+### `Servidor Failover (MV 2)`
 
 IPs a configurar:
 - Adaptador Puente: **192.168.1.51**
@@ -49,7 +49,7 @@ iface **enp0s8** inet static
 
 ---
 
-### Servidor Relay (MV 3)
+### `Servidor Relay (MV 3)`
 
 IPs a configurar:
 - Red **dhcp**: **192.168.2.10**
@@ -69,7 +69,7 @@ iface **enp0s8** inet static****
 
 ---
 
-### Cliente (MV 4)
+### `Cliente (MV 4)`
 
 El cliente tomará IP por DHCP.
 Archivo → */etc/network/interfaces**
