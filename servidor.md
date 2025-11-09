@@ -135,9 +135,9 @@ subnet 192.168.10.0 netmask 255.255.255.0 {
 ### Iniciar y Verificar el Servicio DHCP (MV 1 y MV 2)
 
 Inicia el servicio en **ambos** servidores:
-- `systemctl start isc-dhcp-server
-- `systemctl enable isc-dhcp-server
-- `systemctl status isc-dhcp-server
+- `systemctl start isc-dhcp-server`
+- `systemctl enable isc-dhcp-server`
+- `systemctl status isc-dhcp-server`
 
 Hacer un **journal -u isc-dhcp-server.service** para comprobar que todo funcional correctamente.
 
