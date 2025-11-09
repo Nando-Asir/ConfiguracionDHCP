@@ -18,7 +18,7 @@ Comando en **ambas** MVs:
 - `nano /etc/default/isc-dhcp-server`
 
 Busca la línea de **INTERFACESv4** y edítala:
-- `INTERFACESv4= "enp0s8"`
+- `INTERFACESv4="enp0s8"`
 
 ---
 
