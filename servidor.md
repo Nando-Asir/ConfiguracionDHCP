@@ -45,7 +45,7 @@ max-lease-time 7200;
 
 **Declaración de la relación de Failover**
 ```bash
-failover peer \"dhcp-failover-group\" {
+failover peer "dhcp-failover-group" {
  primary;
  address 192.168.2.1; → IP propia (MV 1)
  port 647;
@@ -94,7 +94,7 @@ authoritative;
 
 **Opciones globales**
 ```bash
-option domain-name \"red.local\";
+option domain-name "red.local";
 option domain-name-servers 8.8.8.8, 8.8.4.4;
 default-lease-time 600;
 max-lease-time 7200;
@@ -102,7 +102,7 @@ max-lease-time 7200;
 
 **Declaración de la relación de Failover (secundaria)**
 ```bash
-failover peer \"dhcp-failover-group\" {
+failover peer "dhcp-failover-group" {
  secondary;
  address 192.168.2.2; → IP propia (MV 2)
  port 647;
@@ -123,7 +123,7 @@ subnet 192.168.2.0 netmask 255.255.255.0 {
 ```bash
 subnet 192.168.10.0 netmask 255.255.255.0 {
  pool {
- failover peer \"dhcp-failover-group\";
+ failover peer "dhcp-failover-group";
  range 192.168.10.100 192.168.10.200;
  option routers 192.168.10.1; → IP del Servidor Relay (MV 3)
  }
