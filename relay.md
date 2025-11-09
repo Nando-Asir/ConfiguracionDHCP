@@ -56,3 +56,7 @@ Inicia y verifica el servicio:
 - `systemctl start isc-dhcp-relay`
 - `systemctl enable isc-dhcp-relay`
 - `systemctl status isc-dhcp-relay`
+
+---
+
+### [Servidor & Failover <- Anterior](servidor.md) | [Siguiente -> Cliente DHCP](cliente.md)
